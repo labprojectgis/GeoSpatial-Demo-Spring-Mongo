@@ -83,5 +83,22 @@
 			</plugin>
 		</plugins>
 	</build>
-
+	
+	<profiles>
+		<profile>
+			<id>standalone</id>
+			<activation>
+				<property>
+					<name>docker</name>
+					<value>!true</value>
+				</property>
+			</activation>
+			<dependencies>
+				<dependency>
+					<groupId>de.flapdoodle.embed</groupId>
+					<artifactId>de.flapdoodle.embed.mongo</artifactId>
+				</dependency>
+			</dependencies>
+		</profile>
+	</profiles>
 </project>
